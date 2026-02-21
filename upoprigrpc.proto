@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc Usernames (GetUsernamesRequest) returns (UsernamesResponse);
+  rpc Stranka (GetStrankaRequest) returns (StrankaResponse);
+  rpc IzbraneStranke (GetIzbraneStrankeRequest) returns (IzbraneStrankeResponse);
+}
+
+message GetUsernamesRequest {
+  repeated int32 ids = 1;
+  int32 uniqueid = 2;
+}
+
+message GetStrankaRequest {
+  int32 IDUporabnik = 1;
+  int32 uniqueid = 2;
+}
+
+message GetIzbraneStrankeRequest {
+  repeated int32 ids = 1;
+  int32 uniqueid = 2;
+}
+
+message Username {
+  int32 IDUporabnik = 1;
+  string UporabniskoIme = 2;
+}
+message UsernamesResponse {
+  repeated Username usernames = 1;
+}
+
+message StrankaResponse {
+  int32 IDStranka = 1;
+  string Ime = 2;
+  string Priimek = 3;
+  string Email = 4;
+  string Telefon = 5;
+  string DavcnaStevilka = 6;
+  int32 IDUporabnik = 7;
+}
+
+message Stranka {
+  int32 IDStranka = 1;
+  string Ime = 2;
+  string Priimek = 3;
+  string Telefon = 4;
+  string Email = 5;
+  string DavcnaStevilka = 6;
+}
+
+message IzbraneStrankeResponse {
+  repeated Stranka stranke = 1;
+}
