@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Copy app code
-COPY . ./app
+COPY . .
 
 EXPOSE 50051
 
