@@ -10,17 +10,17 @@ service UserService {
 
 message GetUsernamesRequest {
   repeated int32 ids = 1;
-  int32 uniqueid = 2;
+  string uniqueid = 2;
 }
 
 message GetStrankaRequest {
   int32 IDUporabnik = 1;
-  int32 uniqueid = 2;
+  string uniqueid = 2;
 }
 
 message GetIzbraneStrankeRequest {
   repeated int32 ids = 1;
-  int32 uniqueid = 2;
+  string uniqueid = 2;
 }
 
 message Username {
